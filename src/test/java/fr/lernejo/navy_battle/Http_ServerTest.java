@@ -23,13 +23,13 @@ class Http_ServerTest {
 
     @Test
     void Port_True() throws Exception {
-        Http_Server.createServer(1010);
-        assertTrue(isActive(1010));
+        Http_Server.createServer(9010);
+        assertTrue(isActive(9010));
     }
 
     @Test
     void Port_False() throws Exception {
-        Http_Server.createServer(2020);
-        assertFalse(isActive(3030));
+        Http_Server.createServer(9020);
+        assertFalse(isActive(9030));
     }
 }
