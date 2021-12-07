@@ -1,8 +1,6 @@
 package fr.lernejo.navy_battle;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -11,7 +9,6 @@ import java.net.SocketAddress;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Http_ServerTest {
-
     public boolean isActive(int port) {
         try (Socket s = new Socket()) {
             s.setReuseAddress(true);
@@ -25,14 +22,14 @@ class Http_ServerTest {
     }
 
     @Test
-    void IP_true() throws Exception {
-        Http_Server.createServer(1010);
-        assertTrue(isActive(1010));
+    void Port_True() throws Exception {
+        Http_Server.createServer(9010);
+        assertTrue(isActive(9010));
     }
 
     @Test
-    void IP_false() throws Exception {
-        Http_Server.createServer(2020);
-        assertFalse(isActive(3030));
+    void Port_False() throws Exception {
+        Http_Server.createServer(9020);
+        assertFalse(isActive(9030));
     }
 }
